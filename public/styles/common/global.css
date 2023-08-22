@@ -32,5 +32,6 @@ a:hover {
     padding: 20px;
 }
 
-/* Outros estilos globais */
-/* ... */
+.error-message {
+    color: red;
+}
