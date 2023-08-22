@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/styles/login/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Faça Login</h1>
+        <% if (locals.errorMessage) { %>
+            <p class="error-message"><%= locals.errorMessage %></p>
+        <% } %>
+        <form method="POST" action="/login">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <input type="submit" value="Login">
+        </form>
+        <p>Ainda não tem uma conta? <a href="/register">Registre-se</a></p>
+    </div>
+</body>
+</html>

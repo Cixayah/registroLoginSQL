@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/styles/home/home.css">
+</head>
+
+<body>
+    <%- include('navbar.ejs') %>
+    <% if (user) { %>
+        <h1>Bem-vindo, <%= user.username %>!</h1>
+        <a href="/logout">Logout</a>
+    <% } else { %>
+        <h1>Bem-vindo à Home!</h1>
+        <a href="/login">Login</a> | <a href="/register">Registrar</a>
+    <% } %>
+</body>
+
+</html>
