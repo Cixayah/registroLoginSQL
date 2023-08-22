@@ -2,8 +2,18 @@
 @import '../navbar/navbar.css';
 /* Reset de estilos para garantir consistência */
 
+:root {
+    --roxo: #572eb0;
+    /* Defina o valor da variável aqui */
+}
 
-body, h1, h2, h3, p, ul, li {
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
     margin: 0;
     padding: 0;
 }
@@ -17,7 +27,7 @@ body {
 
 /* Estilos para links */
 body>a {
-    color: #572eb0;
+    color: var(--roxo);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -26,6 +36,7 @@ a:hover {
     color: #3225bc;
     text-decoration: none;
 }
+
 .container {
     max-width: 800px;
     margin: 0 auto;
