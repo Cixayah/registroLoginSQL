@@ -14,22 +14,22 @@ body {
     background-color: #f2f2f2;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
 
 /* Estilos para links */
-a {
-    color: #007bff;
+body>a {
+    color: #572eb0;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #0056b3;
-    text-decoration: underline;
+    color: #3225bc;
+    text-decoration: none;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Outros estilos globais */

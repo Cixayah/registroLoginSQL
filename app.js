@@ -29,14 +29,29 @@ app.get('/', (req, res) => {
 });
 
 app.get('/register', (req, res) => {
-  res.render('register');
+  res.render('register', { errorMessage: '' }); // Defina a variável errorMessage como uma string vazia
 });
 
 app.post('/register', async (req, res) => {
-  const hashedPassword = await bcrypt.hash(req.body.password, 10);
   const username = req.body.username;
+  const existingUser = await new Promise((resolve, reject) => {
+    db.get(`SELECT * FROM users WHERE username = ?`, [username], (err, user) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(user);
+      }
+    });
+  });
 
-  // Insere o novo usuário no banco de dados
+  if (existingUser) {
+    // Usuário já existe, renderizar página de registro com mensagem de erro
+    return res.render('register', { errorMessage: 'Usuário já existe.' });
+  }
+
+  const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+  // Inserir o novo usuário no banco de dados
   db.run(`INSERT INTO users (username, password) VALUES (?, ?)`, [username, hashedPassword], (err) => {
     if (err) {
       console.error(err.message);

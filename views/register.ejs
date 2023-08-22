@@ -7,6 +7,15 @@
 </head>
 
 <body>
+    <%- include('navbar.ejs') %>
+    <!-- register.ejs -->
+    <h1>Registrar</h1>
+    <% if (errorMessage) { %>
+    <p class="error-message">
+        <%= errorMessage %>
+    </p>
+    <% } %>
+    <!-- Restante do código de registro -->
     <div class="register-container">
         <h1>Crie uma Conta</h1>
         <form method="POST" action="/register">
