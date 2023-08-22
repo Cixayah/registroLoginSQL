@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron&family=Poppins:wght@500&family=Space+Mono&display=swap');
 @import '../navbar/navbar.css';
 /* Reset de estilos para garantir consistência */
+
+
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
